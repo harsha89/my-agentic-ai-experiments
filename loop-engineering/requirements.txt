@@ -1,0 +1,5 @@
+jupyterlab
+pandas
+matplotlib
+gradio>=5
+anthropic

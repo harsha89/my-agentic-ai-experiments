@@ -1,0 +1,4 @@
+# Created when the notebook runs: databases, progress.md files, skills
+loop_workspace/
+.ipynb_checkpoints/
+.gradio/

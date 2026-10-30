@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 640" width="760" height="640" role="img" aria-label="Order Desk architecture">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1L9 5L1 9z" fill="#6B6A64"/></marker></defs>
+<rect x="0" y="0" width="760" height="640" fill="#FFFFFF"/>
+<text x="30" y="32" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">How the Order Desk fits together</text>
+<text x="30" y="52" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#5F5E5A">Read top to bottom: what starts a run, the loop, what feeds it, and the data it changes</text>
+<rect x="30" y="72" width="220" height="74" rx="10" fill="#F6F5F1" stroke="#88877F" stroke-width="1.2"/>
+<text x="140.0" y="94" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2C2C2A">Gradio app</text>
+<text x="140.0" y="113" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#5F5E5A">You press Run the loop</text>
+<text x="140.0" y="132" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#5F5E5A">order_desk</text>
+<rect x="270" y="72" width="220" height="74" rx="10" fill="#F6F5F1" stroke="#88877F" stroke-width="1.2"/>
+<text x="380.0" y="94" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2C2C2A">Hook</text>
+<text x="380.0" y="113" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#5F5E5A">A customer message arrives</text>
+<text x="380.0" y="132" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#5F5E5A">EventBus.on()</text>
+<rect x="510" y="72" width="220" height="74" rx="10" fill="#F6F5F1" stroke="#88877F" stroke-width="1.2"/>
+<text x="620.0" y="94" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#2C2C2A">Schedule</text>
+<text x="620.0" y="113" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#5F5E5A">Nightly reconciliation job</text>
+<text x="620.0" y="132" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#5F5E5A">Scheduler</text>
+<path d="M380 146 V174" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="30" y="176" width="700" height="190" rx="16" fill="#EEEDFE" stroke="#534AB7" stroke-width="1.4"/>
+<text x="380" y="200" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#26215C">The loop runner</text>
+<text x="380" y="219" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11.5" fill="#3C3489">run_loop(): repeat until every goal check passes</text>
+<rect x="44" y="252" width="152" height="92" rx="10" fill="#FFFFFF" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="120.0" y="274" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#26215C">1. Goal check</text>
+<text x="120.0" y="293" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#534AB7">Done yet? Stop if so</text>
+<text x="120.0" y="312" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">goal_resolved()</text>
+<rect x="218" y="252" width="152" height="92" rx="10" fill="#FFFFFF" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="294.0" y="274" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#26215C">2. Context</text>
+<text x="294.0" y="293" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#534AB7">What the agent sees</text>
+<text x="294.0" y="312" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">engineered_context()</text>
+<rect x="392" y="252" width="152" height="92" rx="10" fill="#FFFFFF" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="468.0" y="274" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#26215C">3. Agent</text>
+<text x="468.0" y="293" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#534AB7">Picks one tool call</text>
+<text x="468.0" y="312" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">MockAgent</text>
+<text x="468.0" y="326" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">or ClaudeAgent</text>
+<rect x="566" y="252" width="152" height="92" rx="10" fill="#FFFFFF" stroke="#7F77DD" stroke-width="1.2"/>
+<text x="642.0" y="274" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#26215C">4. Guards</text>
+<text x="642.0" y="293" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#534AB7">Block or approve it</text>
+<text x="642.0" y="312" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">CheckerSubagent</text>
+<text x="642.0" y="326" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#534AB7">human_gate()</text>
+<path d="M196 298 H216" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M370 298 H390" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M544 298 H564" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="380" y="238" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#3C3489">The tool runs, its result is recorded, and the next pass starts from that observation</text>
+<rect x="30" y="404" width="340" height="74" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="200.0" y="426" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#04342C">Knowledge files</text>
+<text x="200.0" y="445" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#085041">AGENTS.md (why), skills (how), progress.md (memory)</text>
+<text x="200.0" y="464" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#085041">AGENTS_MD, SKILLS, Spine</text>
+<rect x="390" y="404" width="340" height="74" rx="10" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.2"/>
+<text x="560.0" y="426" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#04342C">Tools</text>
+<text x="560.0" y="445" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#085041">9 tools with MCP-style schemas, validated and logged</text>
+<text x="560.0" y="464" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#085041">TOOLS, call_tool()</text>
+<path d="M295 404 V346" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M642 344 V402" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<rect x="30" y="516" width="340" height="74" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1.2"/>
+<text x="200.0" y="538" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#4A1B0C">Payment gateway</text>
+<text x="200.0" y="557" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#712B13">Toy payments that can time out on purpose</text>
+<text x="200.0" y="576" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#712B13">PaymentGateway</text>
+<rect x="390" y="516" width="340" height="74" rx="10" fill="#FAECE7" stroke="#993C1D" stroke-width="1.2"/>
+<text x="560.0" y="538" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#4A1B0C">Shop database</text>
+<text x="560.0" y="557" text-anchor="middle" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#712B13">Real SQLite: orders, ledger, outbox, stock and more</text>
+<text x="560.0" y="576" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="11" fill="#712B13">OrderStore, fresh_store()</text>
+<path d="M560 478 V514" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<path d="M388 553 H372" fill="none" stroke="#6B6A64" stroke-width="1.4" marker-end="url(#ah)"/>
+<text x="30" y="618" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" font-size="12" fill="#5F5E5A">The agent can only change the database through tools. Goal checks read it directly with SQL.</text>
+</svg>
